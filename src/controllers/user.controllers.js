@@ -18,16 +18,18 @@ exports.addUser = async (req, res) => {
     try {
         const query = await saveUser(req.body)
         debug(query)
+        res.json({ query })
     } catch (error) {
         res.json({ error })
     }
 }
 
 exports.removeUser = async (req, res) => {
-    const id = req.body.id
+    const id = req.params.id
     try {
         const query = await deleteUser(id)
         debug(query)
+        res.json({ query })
     } catch (error) {
         res.json({ error })
     }

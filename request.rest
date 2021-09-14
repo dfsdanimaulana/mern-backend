@@ -11,9 +11,4 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3003/user/del
-Content-Type: application/json
-
-{
-    "id": "613ff1b3fb5d3f0d78e085bb"
-}
+GET http://localhost:3003/user/613feb53fb5d3f0d78e0859b

@@ -1,0 +1,11 @@
+GET http://localhost:3003/user
+
+###
+POST http://localhost:3003/user/add
+Content-Type: application/json
+
+{
+    "username": "Firnanda Saputra",
+    "email": "antin@gmail.com",
+    "password":"123456"
+}

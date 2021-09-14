@@ -1,46 +1,23 @@
-import express from 'express'
-import cors from 'cors'
-import routes from './app/routes/post.route.js'
+'use strict'
 
+const express = require('express')
+const cors = require('cors')
+const app = express()
+require('dotenv').config()
 
-const app = express('./app/models/index.js')
-const PORT = 3000
+// router
 
-// konek ke mongodb
-import db from './app/models/index.js'
-db.mongoose
-.connect(db.url,
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        // izinkan untuk mencari suatu data dan mengubahnya
-        useFindAndModify: true
-    })
-.then(()=> {
-    console.log('database connected!')
-})
-.catch(err=> {
-    console.log('Cannot connect to the database!', err)
-    process.exit()
-})
-
-// ubah data request yg kita terima dalam bentuk json
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-app.use(express.urlencoded({
-    extended: true
-}))
+app.use(cors())
 
-// kirim data dalam bentuk json
+// routers
 
-app.get('/', (req, res)=> {
-    res.json({
-        message: "welcome to my server"
-    })
+app.use('/user', require('./src/routes/user.routes'))
+
+app.use('/', (req, res) => {
+    res.send('hello')
 })
 
 
-routes(app)
-
-app.listen(PORT, ()=> {
-    console.log(`Server is running on http://localhost:${PORT}`)
-})
+module.exports = app

@@ -13,3 +13,7 @@ exports.saveUser = async (data) => {
 exports.getUsers = (data) => {
     return User.find()
 }
+
+exports.deleteUser = (id) => {
+    return User.findByIdAndDelete(id)
+}

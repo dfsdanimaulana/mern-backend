@@ -9,18 +9,18 @@ exports.showUsers = async (req, res) => {
         // const { username, email, password } = data
         res.json(data)
     } catch (error) {
-        res.json({ error })
+        res.json(error)
     }
 }
 
-exports.addUser = async (req, res) => {
+exports.addUser = async (req, res, next) => {
     const { username, email, password } = req.body
     try {
         const query = await saveUser(req.body)
         debug(query)
-        res.json({ query })
+        res.json(query)
     } catch (error) {
-        res.json({ error })
+        res.json(error)
     }
 }
 
@@ -29,8 +29,8 @@ exports.removeUser = async (req, res) => {
     try {
         const query = await deleteUser(id)
         debug(query)
-        res.json({ query })
+        res.json(query)
     } catch (error) {
-        res.json({ error })
+        res.json(error)
     }
 }

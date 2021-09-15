@@ -6,7 +6,8 @@
     "main": "app.js",
     "scripts": {
         "start": "node ./bin/server.js",
-        "dev": "set DEBUG=dev & nodemon ./bin/server.js"
+        "dev": "set DEBUG=dev & nodemon ./bin/server.js",
+        "commit": "node ./src/utils/commit.js"
     },
     "dependencies": {
         "chalk": "^4.1.2",

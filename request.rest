@@ -5,10 +5,10 @@ POST http://localhost:3003/user/add
 Content-Type: application/json
 
 {
-    "username": "Firnanda Saputra",
-    "email": "antin@gmail.com",
+    "username": "Nanda Renata",
+    "email": "dewi@gmail.com",
     "password":"123456"
 }
 
 ###
-GET http://localhost:3003/user/613feb53fb5d3f0d78e0859b
+GET http://localhost:3003/user/614161f724026930e8b69e81

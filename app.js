@@ -16,7 +16,7 @@ app.use(cors())
 app.use('/user', require('./src/routes/user.routes'))
 
 app.use('/', (req, res) => {
-    res.send('hello')
+    res.status(404)
 })
 
 

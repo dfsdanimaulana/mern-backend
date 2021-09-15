@@ -10,10 +10,21 @@ exports.saveUser = async (data) => {
     return result
 }
 
-exports.getUsers = (data) => {
+exports.getUsers = () => {
     return User.find()
+}
+exports.getUser = (id) => {
+    return User.findById(id)
 }
 
 exports.deleteUser = (id) => {
     return User.findByIdAndDelete(id)
+}
+
+exports.updateDataUser = (data) => {
+    return User.findByIdAndUpdate(data._id, {
+        username: data.username,
+        email: data.email,
+        password: data.password,
+    })
 }

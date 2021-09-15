@@ -11,4 +11,15 @@ Content-Type: application/json
 }
 
 ###
+PUT http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "_id": "6141da580ff6ee3a18df9b2b",
+    "username": "Dani Maulana update agains",
+    "email": "danicraft0017@gmail.com",
+    "password": "123456"
+}
+
+###
 GET http://localhost:3003/user/614161f724026930e8b69e81

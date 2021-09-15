@@ -11,6 +11,9 @@ mongoose.connect(process.env.DB_ATLAS, {
     useFindAndModify: false,
 })
 
+// send back updated data
+mongoose.set('returnOriginal', false)
+
 mongoose.connection
     .on(
         'error',

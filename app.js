@@ -16,7 +16,9 @@ app.use(cors())
 app.use('/user', require('./src/routes/user.routes'))
 
 app.use('/', (req, res) => {
-    res.status(404)
+    res.json({
+        message:'welcome to my app'
+    })
 })
 
 
